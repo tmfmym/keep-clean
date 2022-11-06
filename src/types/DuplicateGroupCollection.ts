@@ -26,7 +26,7 @@ export class DuplicateGroupCollection {
    * @returns 重複タブ
    */
   public getDuplicate(url: Url): DuplicateGroup | undefined {
-    return this.duplicateMap.get(url.value());
+    return this.duplicateMap.get(url.value);
   }
 
   /**
@@ -55,7 +55,7 @@ export class DuplicateGroupCollection {
 
     // Urlをキーにして、同じUrlのタブをグループ化する
     tabs.forEach(tab => {
-      const key = tab.url.value();
+      const key = tab.url.value;
       if (key === "") {
         return;
       }
